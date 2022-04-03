@@ -8,8 +8,12 @@
     'description': """
 This module contains all the required tools for a successful sale.
     """,
-    'depends': [],
+    'depends': [
+    ],
     'data': [
+        "security/ir.model.access.csv",
+        "views/menu.xml",
+        "views/patient_view.xml",
     ],
     'demo': [
     ],
