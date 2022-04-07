@@ -14,6 +14,8 @@ This module contains all the required tools for a successful sale.
         "security/ir.model.access.csv",
         "views/menu.xml",
         "views/patient_view.xml",
+        "views/patient_view_female.xml",
+        "views/patient_view_male.xml",
     ],
     'demo': [
     ],
