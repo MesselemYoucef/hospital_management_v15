@@ -9,6 +9,8 @@
 This module contains all the required tools for a successful sale.
     """,
     'depends': [
+        'base',
+        'mail',
     ],
     'data': [
         "security/ir.model.access.csv",
@@ -16,6 +18,7 @@ This module contains all the required tools for a successful sale.
         "views/patient_view.xml",
         "views/patient_view_female.xml",
         "views/patient_view_male.xml",
+        "views/appointment_view.xml"
     ],
     'demo': [
     ],

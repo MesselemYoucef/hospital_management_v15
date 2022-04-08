@@ -12,7 +12,12 @@
                 name="Patient Details"
                 sequence="0"
                 parent="menu_hospital_root"/>
-
+        <menuitem
+                id="menu_appointment_master"
+                action=""
+                name="Appointments"
+                sequence="1"
+                parent="menu_hospital_root"/>
 
 
     </data>

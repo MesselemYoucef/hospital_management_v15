@@ -20,7 +20,7 @@
         <menuitem
                 id="menu_patient_female"
                 action="action_hospital_patient_female"
-                name="Female Patient"
+                name="Female Patients"
                 sequence="1"
                 parent="menu_patient_master"/>
  
