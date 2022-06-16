@@ -8,7 +8,9 @@
             <field name="model">hospital.appointment</field>
             <field name="arch" type="xml">
                 <tree>
-
+                    <field name="patient_id"/>
+                    <field name="gender"/>
+                    <field name="appointment_time"/>
                 </tree>
             </field>
         </record>
@@ -22,15 +24,25 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name = "patient_id"/>
-                                <field name = "gender"/>
-                                 <field name="booking_date"/>
+                                <field name="patient_id"/>
+                                <field name="ref"/>
+                                <field name="gender"/>
+                                <field name="booking_date"/>
                             </group>
                             <group>
                                 <field name="appointment_time"/>
-
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Prescription" name="prescription">
+                                <group>
+                                </group>
+                            </page>
+                            <page string="Pharmacy" name="pharmacy">
+                                <group>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                     <!--        Chatter-->
                     <div class="oe_chatter">
