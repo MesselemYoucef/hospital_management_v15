@@ -14,6 +14,13 @@ class HospitalAppointment(models.Model):
     appointment_time = fields.Datetime(string="Appointment Time", default=fields.Datetime.now)
     booking_date = fields.Date(string="Booking Date", default=fields.Date.context_today)
     ref = fields.Char(string="Reference", default="Odoo Mates")
+    prescription = fields.Html(String="Prescription")
+    priority = fields.Selection([
+        ('0', 'very low'),
+        ('1', 'low'),
+        ('2', 'normal'),
+        ('3', 'high')
+    ], String="Priority", help="Give the priority to that appointment")
 
     gender = fields.Selection(String="Gender", related="patient_id.gender")
 
