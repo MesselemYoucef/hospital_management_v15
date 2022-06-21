@@ -22,10 +22,20 @@ class HospitalAppointment(models.Model):
         ('3', 'high')
     ], String="Priority", help="Give the priority to that appointment")
 
+    state = fields.Selection([('draft', 'Draft'),
+                                           ('in_consultation', 'In Consultation'),
+                                           ('done', 'Done'),
+                                           ('canceled', 'Canceled'),
+                                           ],
+                                          String="Status", default="draft", required=True)
+
     gender = fields.Selection(String="Gender", related="patient_id.gender")
 
     @api.onchange('patient_id')
     def onchange_patient_id(self):
         for rec in self:
             rec.ref = rec.patient_id.ref
+
+    def object_test(self):
+        print("Button Pressed")
     
