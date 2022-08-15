@@ -44,10 +44,13 @@
                             </group>
                             <group>
                                 <field name="appointment_time"/>
-                                <button name="object_test" string="Object Button" type="object" class="btn-primary"
+                                <button name="object_test" help="Clicking this will allow you to print a message in the log"
+                                        string="Object Button" type="object" class="btn-primary"
                                         confirm="Are you sure to proceed with this action??"/>
                                 <button name="%(hospital_management_v15.action_hospital_patient)d"
-                                        string="Action Button" type="action" class="btn-primary" confirm="Are you sure you want to proceed?"/>
+                                        help="on clicking this you will be redirected to the patients records"
+                                        string="Action Button" type="action" class="btn-primary" confirm="Are you sure you want to proceed?"
+                                />
                             </group>
                         </group>
                         <notebook>
