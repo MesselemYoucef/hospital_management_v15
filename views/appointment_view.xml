@@ -2,6 +2,13 @@
 <odoo>
     <data>
 
+
+<!--        decoration-success -> green-->
+<!--        decoration-warning -> orange-->
+<!--        decoration-danger -> red-->
+<!--        decoration-info -> grey-->
+<!--        decoration-muted -> light grey-->
+
         <!--        Tree View-->
         <record id="view_hospital_appointment_tree" model="ir.ui.view">
             <field name="name">hospital.appointment.tree</field>
@@ -12,6 +19,11 @@
                     <field name="patient_id"/>
                     <field name="gender"/>
                     <field name="appointment_time"/>
+                    <field name="state" widget="badge"
+                           decoration-success="state=='done'"
+                           decoration-info="state == 'draft'"
+                           decoration-muted="state=='in_consultation'"
+                           decoration-danger="state=='canceled'"/>
                 </tree>
             </field>
         </record>
@@ -24,7 +36,8 @@
                 <form create="1" delete="0" edit="false">
                     <header>
 
-                        <field name="state" widget="statusbar" statusbar_visible="draft,in_consultation,done" options="{'clickable': '1'}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,in_consultation,done,canceled"
+                               options="{'clickable': '1'}"/>
                     </header>
                     <sheet>
                         <group>
@@ -44,12 +57,14 @@
                             </group>
                             <group>
                                 <field name="appointment_time"/>
-                                <button name="object_test" help="Clicking this will allow you to print a message in the log"
+                                <button name="object_test"
+                                        help="Clicking this will allow you to print a message in the log"
                                         string="Object Button" type="object" class="btn-primary"
                                         confirm="Are you sure to proceed with this action??"/>
                                 <button name="%(hospital_management_v15.action_hospital_patient)d"
                                         help="on clicking this you will be redirected to the patients records"
-                                        string="Action Button" type="action" class="btn-primary" confirm="Are you sure you want to proceed?"
+                                        string="Action Button" type="action" class="btn-primary"
+                                        confirm="Are you sure you want to proceed?"
                                 />
                             </group>
                         </group>
